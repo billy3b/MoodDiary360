@@ -18,10 +18,10 @@ model User {
 
   clerkId String         @unique
   email   String         @unique
-  entries JournalEntry[]
+  entries journalEntry[]
 }
 
-model JournalEntry {
+model journalEntry {
   id        String    @id @default(uuid())
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
@@ -30,7 +30,7 @@ model JournalEntry {
   content   String    @db.Text
   analysis  Analysis?
 
-  @@index([userId])
+  @@unique([userId, id])
 }
 
 model Analysis {
@@ -38,7 +38,7 @@ model Analysis {
   createdAt DateTime     @default(now())
   updatedAt DateTime     @updatedAt
   entryId   String
-  entry     JournalEntry @relation(fields: [entryId], references: [id])
+  entry     journalEntry @relation(fields: [entryId], references: [id])
   mood      String
   summary   String
   color     String
