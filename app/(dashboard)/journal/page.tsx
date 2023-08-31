@@ -1,5 +1,6 @@
 import EntryCard from "@/components/EntryCard"
 import NewEntryCard from "@/components/NewEntryCard"
+import { analyze } from "@/utils/ai"
 import { getUserByClerkId } from "@/utils/auth"
 import { prisma } from "@/utils/db"
 import Link from "next/link"
@@ -15,7 +16,10 @@ const getEntries = async() => {
             createdAt: 'desc'
         }
     })
+    // await analyze('give solution for two-sum leetcode')
     return entries
+
+    
 }
 
 const JournalPage = async() => {
