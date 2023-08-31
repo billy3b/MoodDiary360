@@ -2,21 +2,19 @@
 
 import { updateEntry } from "@/utils/api";
 import { useState } from "react";
-import { Autosave, useAutosave } from 'react-autosave';
+import { useAutosave } from 'react-autosave'
 
 const Editor =({entry}) => {
-    const [value,setValue] = useState(entry.content);
+    const [value,setValue] = useState(entry)
     const [isLoading, setisLoading] = useState(false)
     useAutosave({
         data: value,
         onSave: async (_value) => {
-            setisLoading(true)
-            const updated = await updateEntry(entry.id, _value)
-            setisLoading(false)
-            
-        }
-
-    })
+          setisLoading(true)
+          const updated = await updateEntry(entry, _value)
+          setisLoading(false)
+        },
+      })
     return <div className="w-full h-full">
         {isLoading && 
             <div>....saving</div>
