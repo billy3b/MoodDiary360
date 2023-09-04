@@ -14,7 +14,10 @@ const getEntries = async() => {
         },
         orderBy:{
             createdAt: 'desc'
-        }
+        },
+        include: {
+            analysis: true,
+          },
     })
     // await analyze('give solution for two-sum leetcode')
     return entries
