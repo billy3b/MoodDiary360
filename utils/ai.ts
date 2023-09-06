@@ -10,15 +10,22 @@ import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 
 const parser = StructuredOutputParser.fromZodSchema(
     z.object({
-        mood:z.string().describe('mood of the person who wrote the journal entry.'),
-        subject: z.string().describe('the subject of the journal entry.'),
-        summary:z.string().describe('summary of the entire journal entry.'),
-        negative:z.boolean().describe('is the journal entry negative?(i.e does it contain negative emotion?)'),
-        color: z
-      .string()
-      .describe(
+        mood:
+          z.string().describe('mood of the person who wrote the journal entry.'),
+        subject: 
+          z.string().describe('the subject of the journal entry.'),
+        summary:
+          z.string().describe('summary of the entire journal entry.'),
+        negative:
+          z.boolean().describe('is the journal entry negative?(i.e does it contain negative emotion?)'),
+        color: 
+        z.string().describe(
         'a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness.'
       ),
+        sentimentScore: 
+          z.number().describe(
+            'sentiment of the text and rated from scale -10 to 10  where -10 is extremely negative, 0 is neutral, 1 is positive and 10 is extremely positive.'
+          )
     })
 )
 

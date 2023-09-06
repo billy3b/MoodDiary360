@@ -34,16 +34,17 @@ model journalEntry {
 }
 
 model Analysis {
-  id        String       @id @default(uuid())
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
-  entryId   String
-  entry     journalEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
-  mood      String
-  summary   String
-  color     String
-  negative  String
-  subject   String
+  id             String       @id @default(uuid())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  entryId        String
+  entry          journalEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  mood           String
+  summary        String
+  color          String
+  negative       String
+  subject        String
+  sentimentScore Float        @default(0)
 
   @@unique([entryId])
 }

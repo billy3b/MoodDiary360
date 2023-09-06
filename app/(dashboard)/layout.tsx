@@ -1,5 +1,6 @@
 import { UserButton } from "@clerk/nextjs"
 const links = [
+    { name: 'Home', href: '/' },
     { name: 'Journals', href: '/journal' },
     { name: 'History', href: '/history' },
   ]
