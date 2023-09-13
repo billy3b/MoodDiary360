@@ -1,5 +1,6 @@
 ## About
-This is a NextJS application that is used for analyzing of journals to find about their moods. It can analyze whether the user is in good mood or bad mood. For this purpose openAI api is used.It can further analyze the mood of the user over a week. It uses clerk for authentication.
+This is a NextJS application that is used for analyzing of journals to find about their moods. It can analyze whether the user is in good mood or bad mood. For this purpose openAI api is used.It can further analyze the mood of the user over a week. It uses clerk for authentication.  
+[Website link](https://mood-diary360.vercel.app/)
 ## Tech Stacks
 * NextJs
 * Clerk
@@ -11,7 +12,7 @@ Go to planetscale and set up your database. Install pscale cli and connect to da
 Move to production branch and connect to database. copy the database url and paste it in .env of your project;
 create another .env.local file in the root.
 * paste all the clerk keys and openAI api keys
-First, run the development server:
+
 ```bash
 1) npm install
 2) npx prisma init
