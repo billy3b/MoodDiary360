@@ -1,5 +1,5 @@
 import {OpenAI} from 'langchain/llms/openai'
-import z from 'Zod'
+import {z} from 'zod'
 import {StructuredOutputParser} from 'langchain/output_parsers'
 import { PromptTemplate } from 'langchain/prompts'
 import {Document} from 'langchain/document'
