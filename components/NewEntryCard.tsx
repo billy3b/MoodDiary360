@@ -1,12 +1,13 @@
 'use client'
+
 import { createNewEntry } from "@/utils/api"
 import { useRouter } from "next/navigation"
 
 const NewEntryCard = () => {
   const router = useRouter()
+
   const handleOnCLick =async() => {
-    
-    const data =  await createNewEntry()
+    const {data} =  await createNewEntry()
     router.push(`/journal/${data.id}`)
   }
   

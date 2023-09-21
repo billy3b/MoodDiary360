@@ -7,8 +7,8 @@ import { useAutosave } from 'react-autosave'
 const Editor =({entry}) => {
     const [value,setValue] = useState(entry)
     const [isLoading, setisLoading] = useState(false)
-    const [analysis, setAnalysis] = useState(entry.analysis)
-    const {mood, summary,color,subject, negative} = analysis
+    const [analysis, setAnalysis] = useState(entry)
+    const {mood, summary,subject, negative} = analysis
     const analysisData = [
       { name: 'Summary', value:summary},
       { name: 'Subject', value:subject},
