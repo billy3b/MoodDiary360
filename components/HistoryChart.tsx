@@ -2,6 +2,9 @@
 import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts'
 
 const CustomTooltip = ({ payload, label, active }) => {
+  if (!active || !payload || payload.length === 0) {
+    return null;
+  }
   const dateLabel = new Date(label).toLocaleString('en-us', {
     weekday: 'long',
     year: 'numeric',
